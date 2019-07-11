@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>邮件</title>
+    <style>
+        form {
+            width: 1200px;
+            height: 1000px;
+            border: 1px solid black;
+            text-align: center
+        }
+
+        header {
+            width: 1200px;
+            height: 60px;
+            background: #00a0e9;
+            color: white
+        }
+
+        header span {
+            font-size: 25px;
+            height: 60px;
+            line-height: 60px
+        }
+
+        #address {
+            width: 1200px;
+            height: 120px;
+        }
+
+        #address input {
+            width: 1000px;
+            margin-top: 10px;
+            border-right: 0;
+            border-left: 0;
+            border-top: 0;
+            height: 25px;
+            font-size: 20px
+        }
+
+        #main {
+            width: 1200px;
+            height: 740px;
+            font-size: 25px
+        }
+
+        #main #title {
+            width: 1000px;
+            margin-top: 10px;
+            border-right: 0;
+            border-left: 0;
+            border-top: 0;
+            height: 25px;
+            font-size: 20px
+        }
+
+        #main #doc {
+            width: 1000px;
+            border-right: 0;
+            border-left: 0;
+            border-top: 0;
+            height: 500px;
+            font-size: 20px;
+            margin: 10px 56px 0 0;
+        }
+    </style>
+
+</head>
+<body>
+<div style="width: 1200px;position: relative">
+    <form method="post" action='{% url "e_mail" %}' enctype="multipart/form-data">
+        <header>
+            <span>M&Y邮件系统</span>
+        </header>
+        <div id="address">
+            <!--    邮件地址-->
+            <div>发件人：<input type="text" name="sender"></div>
+            <div>收件人：<input type="text" name="receiver"></div>
+            <div>抄送人：<input type="text" name="copy_to"></div>
+        </div>
+        <div id="main">
+            <!--        主题-->
+            <div>主题：<input type="text" name="subject" id="title"></div>
+            <span class="zw" style="margin-left: 62px;float: left">正文：</span>
+            <div><textarea id="doc" rows="20px" cols="20px" name="content"></textarea></div>
+            <div>
+                <input type="submit" value="发送">
+                <a href="" style="text-decoration: none ;color: #333333;margin-left: 30px;margin-top: 20px">重置</a>
+            </div>
+        </div>
+    </form>
+    <div style="position: absolute;top:20px;right: 30px;color: white;">
+        <a href="#" style="text-decoration: none;color: white">收件箱</a>
+        <a href="#" style="text-decoration: none;color: white">发件箱</a>
+    </div>
+</div>
+</body>
+</html>

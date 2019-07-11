@@ -1,0 +1,21 @@
+/*消除样式*/
+body{
+    padding: 0;
+    list-style: none;
+}
+
+/*设置背景图片*/
+#main{
+    /*保持父元素高度*/
+}
+#main>h3{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+/*表单控件*/
+form{
+    border: 2px solid #f1b39b;
+    padding: 20px;
+    margin: 20px 20px;
+}

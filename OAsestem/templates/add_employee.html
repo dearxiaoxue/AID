@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增员工</title>
+    <style>
+        body{text-decoration:none }
+        #add_employee_form{width: 1200px;height: 960px}
+        #add_table{width: 600px;margin: 100px auto 0;padding: 20px 20px 40px 20px}
+        #add_table tr th input{width: 460px;float: right;height: 30px;}
+        #add_table tr th span{float: left}
+        #add_table tr th #add_employee_sub{width: 100px;margin-right: 0;background: #4aaa4a;border: 0;color: white}
+        #add_employee_title{margin-bottom: 30px}
+    </style>
+</head>
+<body>
+<form action="{% url 'add_employee' %}" method="POST" enctype="multipart/form-data" id="add_employee_form">
+    <table id="add_table">
+        <tr ><th ><h3 id="add_employee_title" style="float: left">新增员工</h3></th></tr>
+        <tr><th><span>姓名：</span><input type="text" name="em_name"></th></tr>
+        <tr><th><span>年龄：</span><input type="text" name="em_age"></th></tr>
+        <tr><th><span>出生日期：</span><input type="date" name="em_born"></th></tr>
+        <tr><th><span>性别：</span><input type="text" name="gender"></th></tr>
+        <tr><th><span>等级：</span><input type="text" name="level"></th></tr>
+        <tr><th><span>部门：</span><input type="text" name="department"></th></tr>
+        <tr><th><span>毕业学校：</span><input type="text" name="school"></th></tr>
+        <tr><th><span>邮箱：</span><input type="text" name="email_id"></th></tr>
+        <tr><th><span>邮箱密码：</span><input type="text" name="email_pword"></th></tr>
+        <tr><th><span>用户名：</span><input type="text" name="username"></th></tr>
+        <tr><th><input type="submit" value="提交" id="add_employee_sub">
+            <a href="" style="text-decoration:none;color: #333333">重置</a></th></tr>
+    </table>
+</form>
+</body>
+</html>

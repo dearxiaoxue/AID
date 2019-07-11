@@ -1,0 +1,63 @@
+{% extends 'system.html' %}
+{% block mian_page %}
+    <div id="right">
+
+        <script src="../../../static/js/jquery-1.11.3.js"></script>
+        <script src="../../../static/js/cwa-users-adm.js"></script>
+        <script src="../../../static/js/cwa-users.js"></script>
+        <link rel="stylesheet" href="../../../static/css/base.css">
+        <link rel="stylesheet" href="../../../static/css/cwa-users.css">
+
+        <div id="cwa-main">
+            <p class="cwa-title">
+                查询员工异常考勤情况:
+            </p>
+
+            <div class="cwa-form">
+                <div class="cwa-form-line">
+                    <p>员工id:</p>
+                    <input type="text" name="id" class="cwa-id" value="{{ employee.id }}">
+                </div>
+                <div class="form-line">
+                    <p>请选择日期: </p>
+                    <input type="month" name="date" id="cwa-date_info" class="cwa-date">
+                </div>
+                <div class="cwa-form-line">
+                    <p>请输入天数: </p>
+                    <input type="text" name="day" id="cwa-date_info2" placeholder="默认本月" class="cwa-day">
+                </div>
+
+                <div class="cwa-sub">
+                    <button class="cwa-user-sub1">查询</button>
+                    <button class="cwa-user-sub2">所有异常考勤</button>
+                </div>
+            </div>
+
+            <div id="cwa-log">
+                <button name="1" class="cwa-btn cwa-btn1">签<br>到</button>
+                <button name="1" class="cwa-btn cwa-btn2">签<br>退</button>
+            </div>
+
+
+            <div id="cwa-table">
+                <table border="1" class="cwa-table" width="600">
+                    <tr>
+                        <th>员工id</th>
+                        <th>员工姓名</th>
+                        <th>时间</th>
+                        <th>签到时间</th>
+                        <th>签退时间</th>
+                        <th>考勤状态</th>
+                    </tr>
+                    <tbody id="cwa-show">
+
+                    </tbody>
+
+                </table>
+            </div>
+
+
+        </div>
+
+    </div>
+{% endblock %}

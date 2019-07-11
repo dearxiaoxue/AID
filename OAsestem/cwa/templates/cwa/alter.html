@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改考勤状态</title>
+    <script src="../../../static/js/jquery-1.11.3.js"></script>
+    <script src="../../../static/js/cwa-users-adm.js"></script>
+    <link rel="stylesheet" href="../../../static/css/alter.css">
+</head>
+<body>
+<div id="alter-main">
+
+    <div>
+        <p>当前员工状态</p>
+        <table border="1" class="cwa-alter-table" width="600">
+            <tr>
+                <th>员工id</th>
+                <th>员工姓名</th>
+                <th>日期</th>
+                <th>签到时间</th>
+                <th>签退时间</th>
+                <th>考勤状态</th>
+            </tr>
+            <tr>
+                <td id="cwa-alter-td1">{{user.uid}}</td>
+                <td>{{user.name}}</td>
+                <td id="cwa-alter-td2">{{user.time}}</td>
+                <td>{{user.log_in}}</td>
+                <td>{{user.log_back}}</td>
+                <td>{{user.isActive}}</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div id="cwa-select">
+        <div class="cwa-msg01">
+            <span>请选择考勤状态:</span>
+            <select id="cwa-sel">
+                <option>正常</option>
+                <option>迟到</option>
+                <option>早退</option>
+                <option>迟到,早退</option>
+            </select>
+        </div>
+
+        <div class="cwa-select">
+        <span>请选择备注原因:</span>
+            <select id="cwa-msg">
+                <option>特殊原因</option>
+                <option>系统异常</option>
+                <option>加班</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="alter-btn">
+        <input type="submit" value="修改" id="cwa-change">
+        <a href="{% url 'index' %}">返回</a>
+    </div>
+</div>
+
+</body>
+</html>

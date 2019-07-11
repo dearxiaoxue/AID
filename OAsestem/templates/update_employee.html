@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>账户修改</title>
+    <style>
+        #update_employee_form {
+            width: 1200px;
+            height: 960px
+        }
+
+        #employee_table {
+            width: 540px;
+            margin: 100px auto 0;
+            padding: 20px 20px 40px 20px
+        }
+
+        #employee_table div input {
+            width: 460px;
+            float: right;
+            height: 30px;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        #employee_table div span {
+            float: left;
+            height: 36px;
+            margin-bottom: 20px
+        }
+        #employee_table div #sub{background: #4aaa4a;border: 0;color: white;width: 474px}
+    </style>
+</head>
+<body>
+<form action="{% url 'update_employee' id %}" method="post" enctype="multipart/form-data" id="update_employee_form">
+    <div id="employee_table">
+        <h2 style="text-align: center">员工信息修改</h2>
+        <div>
+            <span>编号：</span><input type="text" name="id" value="{{ id }}">
+        </div>
+        <div>
+            <span>姓名：</span><input type="text" name="em_name" value="{{ employee_list.em_name }}">
+        </div>
+        <div>
+            <span>年龄：</span><input type="text" name="em_age" value="{{ employee_list.em_age }}">
+        </div>
+        <div>
+            <span>生日：</span><input type="text" name="em_born" value="{{ employee_list.em_born }}">
+        </div>
+        <div>
+            <span>性别：</span><input type="text" name="gender" value="{{ employee_list.gender }}">
+        </div>
+        <div>
+            <span>等级：</span><input type="text" name="level" value="{{ employee_list.level }}">
+        </div>
+        <div>
+            <span>部门：</span><input type="text" name="department" value="{{ employee_list.department }}">
+        </div>
+        <div>
+            <span>学校：</span><input type="text" name="school" value="{{ employee_list.school }}">
+        </div>
+        <div>
+            <span>邮箱:</span><input type="text" name="email_id " value="{{ employee_list.email_id }}">
+        </div>
+        <div>
+            <span>密码：</span><input type="text" name="email_pword "
+                                            value="{{ employee_list.email_pword }}">
+        </div>
+        <div>
+        <input type="submit" id="sub">
+            </div>
+    </div>
+</form>
+</body>
+</html>

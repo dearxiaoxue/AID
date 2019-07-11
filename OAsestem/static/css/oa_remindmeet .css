@@ -1,0 +1,29 @@
+/*消除样式*/
+body{
+    padding: 0;
+    list-style: none;
+}
+
+
+/*设置背景图片*/
+#main{
+    position: relative;
+}
+/*表单*/
+form{
+    border: 2px solid #f1b39b;
+}
+
+table{
+    width: 1450px;
+    margin: 1px 20px;
+    border: 1px solid #f1b39b ;
+}
+
+table tr{
+    height: 25px;
+    text-align:center;
+}
+#lastth{
+    width: 90px;
+}

@@ -1,0 +1,37 @@
+{% extends 'system.html' %}
+{% block mian_page %}
+<div id="right">
+
+    <link rel="stylesheet" href="/static/css/oa_main.css">
+    <script type="text/javascript" src="/static/js/oa_main.js"></script>
+    <script src="/static/js/jquery-1.11.3.js"></script>
+    <!--导航栏-->
+    <div id='nav'>
+        <div id="meet_main">
+            <span class="t1"> M&Y </span>
+            <span class="t2"> 会议通知系统 </span>
+        </div>
+
+    <!--主体-->
+
+        <div id="top">
+            <ul>
+                <li class="flag hq_hy"><a type="submit"  href="{% url 'newmeet' %}" onclick="dj(this)">发起会议</a></li>
+                <li class="flag hq_zsh"><a type="submit" href="{% url 'selectmeet' %}">会议查询</a></li>
+                <li class="flag hq_hb"><a type="submit" href="{% url 'remindmeet' 1 %}">待开会议</a></li>
+                <li class="flag hq_jyyc"><a type="submit" href="{% url 'uploadmeet' 1 %}">记录上传</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+        {% block mian_page_meet %}
+        <div id="page_meet">
+        </div>
+        {% endblock %}
+
+
+
+</div>
+{% endblock mian_page %}

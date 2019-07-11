@@ -1,0 +1,18 @@
+{% extends 'meeting/oa_main.html' %}
+{% block mian_page_meet %}
+<div id="page_meet">
+
+    <link rel="stylesheet" href="/static/css/oa_newmeet.css">
+
+    <!--主体-->
+    <div id="main">
+        <h3>发起会议</h3>
+        <form action="{% url 'newmeet' %}" method="post">
+            {% csrf_token %}
+            <table>{{ form.as_table }}</table>
+            <button type="submit" style="background:#5897fb;border-radius:30px ;font-size:20px ;color: white;width: 100px">发送</button>
+            <p>{{ a }}</p>
+        </form>
+    </div>
+</div>
+{% endblock mian_page_meet %}

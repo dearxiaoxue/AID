@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改账户</title>
+    <style>
+        body{text-decoration:none }
+        #add_user_form{width: 1200px;height: 960px}
+        #add_table{width: 600px;margin: 100px auto 0;padding: 20px 20px 40px 20px}
+        #add_table tr th input{width: 460px;float: right;height: 30px;margin-bottom: 20px}
+        #add_table tr th #add_user_sub{width: 100px;margin-right: 0;background: #4aaa4a;border: 0;color: white}
+    </style>
+</head>
+<body>
+<form id="add_user_form" action="{% url 'staff_add' %}" method="POST" enctype="multipart/form-data">
+    <table id="add_table">
+        <tr><th><h2 style="float: left;margin-left: 20px">新增用户</h2></th></tr>
+        <tr><th>账户：<input type="text" name="username"></th></tr>
+        <tr><th>密码：<input type="password" name="password"></th></tr>
+        <tr><th>描述：<input type="text" name="intro"></th></tr>
+        <tr><th><input type="submit" value="提交" style="" id="add_user_sub">
+            <a href="" style="text-decoration:none;color: #333333">重置</a></th></tr>
+    </table>
+</form>
+</body>
+</html>

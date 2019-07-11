@@ -1,0 +1,91 @@
+/*消除样式*/
+body ul{
+    padding: 0;
+    list-style: none;
+    margin:0;
+	padding:0;
+	list-style:none;
+}
+a{
+	color:#333;
+	/*取消超链接的下划线*/
+	text-decoration:none;
+}
+/*导航栏*/
+#nav{
+    width: 1500px;
+    height: 120px;
+    margin: 10px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    border-bottom: solid 3px;
+    background: -webkit-linear-gradient(top,#ffffff,#eeeeee,#cccccc);
+}
+
+/*设置背景图片*/
+#nav #meet_main{
+    margin-left: 20px;
+    margin-top: 35px;
+    float: left;
+    left: 20px;
+}
+
+.t1{font-family:华文隶书;font-size: 35px}
+.t2{font-family: 隶书}
+
+/*菜单样式*/
+#nav #top{
+    width: 80%;
+    height: 70px;
+    margin-top:47px;
+    float: right;
+    border: solid 3px #e0ffff;
+    border-bottom: solid 3px;
+    background: -webkit-linear-gradient(top,#eeeeee,#e0ffff,#afeeee);
+}
+
+#top ul{
+	margin: 0 auto;
+    margin-right:200px;
+    margin-top:25px;
+    float:right;
+}
+#top ul li{
+	width: 120px;
+    height: 47px;
+	text-align: center;
+	font-size: 28px;
+    float:left;
+	margin-left:130px;
+    text-decoration: none;
+}
+
+.hq_hy:hover, .hq_zsh:hover, .hq_hb:hover, .hq_jyyc:hover, .hq_cs:hover
+　　/*鼠标移上去变色（不点击）*/
+        {
+            color: #fff;
+            border-color: #b1b0b0;
+            background: #b1b0b0;
+            border: none;
+        }
+        .start
+        {
+            cursor: pointer;
+        }
+        .end
+        {
+            cursor: pointer;
+            color: #fff;
+            background: #b1b0b0;
+            border: none;
+        }
+
+
+#page_meet {
+    width: 1500px;
+    height: 760px;
+    margin-left: 10px;
+    margin-top:3px;
+    background: #eeeeee;
+}

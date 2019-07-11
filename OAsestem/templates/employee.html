@@ -1,0 +1,64 @@
+{% extends 'system.html' %}
+{% block mian_page %}
+    <style>
+        .t{background: #F9F9F9;margin: 5px 0;border-bottom: 1px solid #DDDDDD;border-top: 1px solid #DDDDDD;height: 30px}
+        .t:hover{background: #DEE1E6}
+    </style>
+    <script src="/static/js/jquery-1.11.3.js"></script>
+    <script>
+        function rec() {
+            var mymessage = confirm("是否确认删除？");
+            if (mymessage === true) {
+                var a = $('.a').html();
+                location.href = "delete/" + a;
+            } else {
+                location.href = '{% url "employee" %}';
+            }
+        }
+    </script>
+    <div id="right">
+        <div id="employee_header">
+            {#            <a href="{% url 'employee_add' %}"#}
+            <a href="{% url 'add_employee' %}"
+               style="width: 50px;height: 28px; position: relative;
+               left: 30px;top: 30px;text-decoration: none;color: #333333;padding:5px 20px;border-radius: 15px ;background:#00a0e9;color: white ">新增+</a>
+            <div>
+                <form action="{% url 'employee_search' %}" method="post" enctype="multipart/form-data">
+                    <input type="text" name="search" placeholder="请输入搜索内容" class="employee_i1"
+                           style=" width: 280px;height: 39px;vertical-align: bottom;margin: 0 0 0 -5px;position: relative;left:685px;margin-top: 10px"><input type="submit" value="搜索" class="employee_i2"
+                           style="width: 100px;height: 45px;display: inline-block;margin: 0 0 0 -1px;position: relative;left:685px;margin-top: 10px">
+
+                </form>
+            </div>
+        </div>
+        <div id="employee_page" style=" width: 1200px;
+            height: 800px;
+            background: white;
+            margin-left: 15px;
+            margin-top: 20px">
+            <table class="employee_tc1" style="height: 45px;font-size: 14px;border-collapse:collapse;">
+                <tr>
+                    <th class="employee_t1" style="width: 150px;"><h2>工号</h2></th>
+                    <th class="employee_t2" style="width: 200px;"><h2>姓名</h2></th>
+                    <th class="employee_t3" style="width: 150px;"><h2>部门</h2></th>
+                    <th class="employee_t4" style="width: 250px;"><h2>邮箱</h2></th>
+                    <th class="employee_t5" style="width: 300px;"><h2>操作</h2></th>
+                </tr>
+                {% for x in employee_list %}
+                    <tr class="at">
+                        <th class="a t">{{ x.id }}</th>
+                        <th class="t" >{{ x.em_name }}</th>
+                        <th class="t" >{{ x.department }}</th>
+                        <th class="t" >{{ x.email_id }}</th>
+                        <th class="t" >
+                            <a href="{% url 'update_employee' x.id %}"
+                               style="text-decoration: none;color: #00a0e9">修改</a>
+                            <a type="button" class="alter" href="#" onclick="rec()"
+                               style="text-decoration: none;color: red">删除</a>
+                        </th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

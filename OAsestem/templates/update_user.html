@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>账户修改</title>
+    <style>
+        body {
+            text-decoration: none
+        }
+
+        #update_user_form {
+            width: 1200px;
+            height: 960px
+        }
+
+        #update_table {
+            width: 600px;
+            margin: 100px auto 0;
+            padding: 20px 20px 40px 20px;
+            height: 400px
+        }
+
+        #update_table div input {
+            width: 460px;
+            float: right;
+            height: 30px;
+            margin-bottom: 20px
+        }
+
+        #update_table div label {
+            float: left;
+            height: 30px;
+            margin-bottom: 20px
+        }
+
+        #update_table div #update_user_sub {
+            width: 100px;
+            margin-right: 85px;
+            background: #4aaa4a;border: 0;color: white
+        }
+    </style>
+</head>
+<body>
+<form id="update_user_form" action="{% url 'staff_update' 0 %}" method="post" enctype="multipart/form-data">
+    <div id="update_table">
+        <div>
+            <label>编号：<input type="text" name="id" value="{{ user_list.id }}"></label>
+        </div>
+        <div>
+            <label>账户：<input type="text" name="uname" value="{{ user_list.uname }}"></label>
+        </div>
+        <div>
+            <label>密码：<input type="password" name="password" value="{{ user_list.password }}"></label>
+        </div>
+        <div>
+            <label>描述：<input type="text" name="intro" value="{{ user_list.intro }}"></label>
+        </div>
+        <div>
+        <input type="submit" id="update_user_sub">
+        </div>
+    </div>
+</form>
+</body>
+</html>

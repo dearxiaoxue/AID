@@ -1,0 +1,57 @@
+{% extends 'meeting/oa_main.html' %}
+{% block mian_page_meet %}
+<div id="page_meet">
+    <link rel="stylesheet" href="/static/css/oa_remindmeet%20.css">
+
+    <!--主体-->
+    <div id="main">
+        <h3>会议提醒</h3>
+
+        <table border="1">
+            <tr>
+                <th>会议编号</th>
+                <th>会议发起时间</th>
+                <th>会议日期</th>
+                <th>会议时间</th>
+                <th>会议地点</th>
+                <th>会议名称</th>
+                <th>会议内容</th>
+                <th>会议状态</th>
+                <th>发起人</th>
+                <th>应参会人员</th>
+                <th>出席人员</th>
+                <th>缺席人员</th>
+            </tr>
+            {% for i in meeting_list %}
+            <tr>
+                <td>{{ i.meid }}</td>
+                <td>{{ i.mesytime }}</td>
+                <td>{{ i.date }}</td>
+                <td>{{ i.time }}</td>
+                <td>{{ i.meplace }}</td>
+                <td>{{ i.metopic }}</td>
+                <td>{{ i.content }}</td>
+                <td>{{ i.statu }}</td>
+                <td>{{ i.meinitiator }}</td>
+                <td>{{ i.meattendee }}</td>
+                <td>{{ i.mepresent }}</td>
+                <td>{{ i.menopresent }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="12">
+                    <div id="pages" class="text-center">
+                        <p>共计<span style="color: red;">{{ count }}</span>条记录
+                        <a class='active' href="{% url 'remindmeet' currentPagemin %}" style="text-decoration: none;color: #00a0e9">上一页</a>
+                        <a class='active' href="{% url 'remindmeet' currentPagemax %}" style="text-decoration: none;color: #00a0e9">下一页</a>
+                        第<span style="color: red;">{{ currentPage }}</span>页
+                        共计<span style="color: red;">{{ currentPagemax }}</span>页
+                       </p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+{% endblock mian_page_meet %}

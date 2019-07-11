@@ -1,0 +1,15 @@
+#alter-main{
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+#cwa-select{
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+
+#alter-btn a{
+    display: inline-block;
+}
+

@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+#main{height: 925px}
+header {
+    height: 50px;
+    border-bottom: 0.5px solid #B6B4B6;
+    border-top: 0.5px solid #B6B4B6;
+    background: #F9F9F9
+}
+
+#left {
+    height: 920px;
+    width: 260px;
+    background: deepskyblue
+}
+
+header span, strong {
+    height: 55px;
+    line-height: 55px;
+    margin-left: 10px;
+    color: #333333;
+}
+
+header strong {
+    font-size: 1.2rem
+}
+
+header span {
+    font-size: 80%
+}
+
+#left {
+    border-bottom: 0.5px solid #B6B4B6;
+    border-right: 0.5px solid #B6B4B6;
+    background: #F9F9F9
+}
+
+.user_name {
+    float: right;
+    margin-right: 10%
+}
+
+#left div {
+    font-weight: 400;
+    font-size: 16px;
+    color: #5c5c5c;
+    padding: 12px 0 12px 24px;
+    border-bottom: 0.5px solid #B6B4B6;
+    border-top: 0.5px solid #B6B4B6;
+    text-decoration: none;
+    background: white;
+}
+
+#left div a {
+    text-decoration: none;
+    color: #5c5c5c;
+}
+
+#id div img {
+    vertical-align: middle;
+    margin-top: 10px
+}
+
+.msg {
+    padding: 15px;
+    margin-top: 30px
+}
+
+#right {
+    position: relative;
+    top: -920px;
+    left: 261px;
+    height: 920px
+}
+
+#left a:hover {
+    cursor: pointer
+}
+
+

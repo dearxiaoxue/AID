@@ -1,0 +1,20 @@
+/*!*消除样式*!*/
+body{
+    padding: 0;
+    list-style: none;
+}
+
+#main{
+    position: relative;
+}
+
+#main form{
+    margin-top: 20px;
+    padding-left: 300px;
+}
+
+/*!*表单控件*!*/
+table tr{
+    height: 60px;
+    text-align:center;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>办公系统</title>
+    <link rel="icon" href="/static/img/小书本图片.jpg" type="/static/image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/system.css">
+    <script src="/static/js/jquery-1.11.3.js"></script>
+</head>
+<body style="height: 960px">
+<!--    顶部页面-->
+<header>
+    <strong>后台</strong><span>管理系统</span>
+    <span id="cg"></span>
+    <script>
+        // <!--这个cg就是span的id，初始化Date时间并转化为字符string类型,每1000毫秒，setInterval() 就会调用函数，直到被关闭。-->
+        setInterval("cg.innerHTML=new Date().toLocaleString()", 1000);
+    </script>
+    <span class="user_name">员工：{{ user_name }}</span>
+</header>
+<!--主体-->
+<div id="main" style="height: 925px">
+    <!--        左边-->
+    <div id="left">
+        <a class="back"></a>
+        <div>
+            <img src="/static/img/小书本图片.jpg" style="height: 21px;vertical-align: bottom">
+            <a href='{% url "index" %}' class="di1" >考勤管理</a>
+        </div>
+        <div>
+            <img src="/static/img/小书本图片.jpg" style="height: 21px;vertical-align: bottom">
+            <a class="di2" href="{% url 'employee' %}">员工管理</a>
+        </div>
+        <div>
+            <img src="/static/img/小书本图片.jpg" style="height: 21px;vertical-align: bottom">
+            <a class="di3" href="{% url 'meeting' %}">会议管理</a>
+        </div>
+        <div>
+            <img src="/static/img/小书本图片.jpg" style="height: 21px;vertical-align: bottom">
+            <a href="{% url 'e_mail' %}" class="di4"
+            >电子邮件</a>
+        </div>
+        <div>
+            <img src="/static/img/小书本图片.jpg" style="height: 21px;vertical-align: bottom">
+            <a href="{% url 'staff' %}">账户管理</a>
+        </div>
+        <!--        公告栏-->
+        <div class="msg"><h3>公告栏</h3>
+            <p>欢迎使用公告栏</p></div>
+    </div>
+    <!--        右边-->
+    {% block mian_page %}
+        <div id="right">
+        </div>
+    {% endblock %}
+</div>
+</body>
+</html>
